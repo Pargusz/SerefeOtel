@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Şerefe Hotel</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="subpage">
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-logo">ŞEREFE <span>OTEL</span></div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header" class="scrolled">
+        <div class="logo">ŞEREFE <span>HOTEL</span></div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Collection</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="lang-switch">
+            <button class="lang-btn" onclick="location.href='../contact.html'">TR</button>
+            <button class="lang-btn active" onclick="location.href='contact.html'">EN</button>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="hero-subtitle">RESERVATION & SUPPORT</span>
+            <h1>Get in Touch</h1>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section>
+        <div style="display: flex; gap: 100px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <div class="section-head">
+                    <label>LOCATION</label>
+                    <h2>Journey to Şerefe</h2>
+                </div>
+                <p style="color: var(--text-muted); margin-bottom: 40px;">Located in the heart of Istanbul, we are a sanctuary close to all transportation points but away from the chaos. We are waiting for you in the most elegant street of Nişantaşı.</p>
+                
+                <div style="margin-bottom: 30px;">
+                    <h4 style="font-family: var(--font-alt); font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px;">ADDRESS</h4>
+                    <p>Rumeli Avenue No:45, Nişantaşı, Istanbul</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="font-family: var(--font-alt); font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px;">PHONE</h4>
+                    <p>+90 212 123 45 67</p>
+                </div>
+                <div style="margin-bottom: 30px;">
+                    <h4 style="font-family: var(--font-alt); font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px;">EMAIL</h4>
+                    <p>info@serefeotel.com</p>
+                </div>
+            </div>
+            <div style="flex: 1.5; min-width: 400px; background: #fff; border: 1px solid var(--border); padding: 60px;">
+                <form id="contactForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                        <div>
+                            <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px;">NAME</label>
+                            <input type="text" style="width: 100%; padding: 15px; border: 1px solid var(--border); background: var(--ivory); font-family: var(--font-body);">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px;">EMAIL</label>
+                            <input type="email" style="width: 100%; padding: 15px; border: 1px solid var(--border); background: var(--ivory); font-family: var(--font-body);">
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px;">MESSAGE</label>
+                        <textarea rows="6" style="width: 100%; padding: 15px; border: 1px solid var(--border); background: var(--ivory); font-family: var(--font-body);"></textarea>
+                    </div>
+                    <button type="submit" class="btn-luxury" style="border-color: var(--dark); color: var(--dark); cursor: pointer;">SEND</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 30px; color: #fff;">ŞEREFE <span>HOTEL</span></div>
+                <p>The only address for elegance and peace in Istanbul.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="index.html">Collection</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <p style="color: #fff; margin-bottom: 10px;">Nişantaşı, Istanbul</p>
+                <p style="color: var(--gold); font-weight: 600;">+90 212 123 45 67</p>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 60px; font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 2px;">
+            &copy; 2024 ŞEREFE HOTEL. ALL RIGHTS RESERVED. | DESIGN BY Pargusz
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

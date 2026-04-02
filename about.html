@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hikayemiz | Şerefe Otel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="subpage">
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-logo">ŞEREFE <span>OTEL</span></div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header" class="scrolled">
+        <div class="logo">ŞEREFE <span>OTEL</span></div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Koleksiyon</a></li>
+                <li><a href="about.html" class="active">Hikayemiz</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="location.href='about.html'">TR</button>
+            <button class="lang-btn" onclick="location.href='en/about.html'">EN</button>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="hero-subtitle">MİRASIMIZ</span>
+            <h1>Şerefe'nin Doğuşu</h1>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section>
+        <div class="editorial-flex" style="flex-direction: row-reverse;">
+            <div class="editorial-img">
+                <img src="assets/room.png" alt="Tarihçe">
+            </div>
+            <div class="editorial-text">
+                <div class="section-head">
+                    <label>BİR İSTANBUL KLASİĞİ</label>
+                    <h2>1994'ten Günümüze Asalet</h2>
+                </div>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">Şerefe Otel, sadece bir konaklama noktası değil, İstanbul'un ruhunu yansıtan bir buluşma noktasıdır. 1994 yılında Nişantaşı'nın kalbinde atılan ilk adımla başlayan bu yolculuk, bugün lüksün ve konforun en rafine haliyle devam ediyor.</p>
+                <p style="color: var(--text-muted);">Her misafirimiz bizim için bir hikaye ortağıdır. Amacımız, size sadece bir oda sunmak değil, hayat boyu hatırlayacağınız bir İstanbul hatırası bırakmaktır.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 30px; color: #fff;">ŞEREFE <span>OTEL</span></div>
+                <p>Zerafetin ve huzurun İstanbul'daki tek adresi.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigasyon</h5>
+                <ul>
+                    <li><a href="index.html">Koleksiyon</a></li>
+                    <li><a href="about.html">Hikayemiz</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>İletişim</h5>
+                <p style="color: #fff; margin-bottom: 10px;">Nişantaşı, İstanbul</p>
+                <p style="color: var(--gold); font-weight: 600;">+90 212 123 45 67</p>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 60px; font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 2px;">
+            &copy; 2024 ŞEREFE OTEL. ALL RIGHTS RESERVED. | DESIGN BY Pargusz
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
