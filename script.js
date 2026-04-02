@@ -85,57 +85,56 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(data => {
-                // Başarılı olduğunda (veya form sunulduğunda) butonu eski haline getir
                 submitBtn.innerText = originalBtnText;
                 submitBtn.disabled = false;
                 
-                // --- POPUP GÖSTERİMİ ---
-                // Create popup overlay
-                const overlay = document.createElement('div');
-                overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); z-index: 3000; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;';
-                
-                // Create popup container
-                const popup = document.createElement('div');
-                popup.style.cssText = 'background: var(--white); padding: 50px; border-radius: var(--radius); text-align: center; max-width: 500px; transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 40px 100px rgba(0,0,0,0.2); margin: 20px; position: relative;';
-                
-                const isEnglish = window.location.pathname.includes('/en/');
-                
-                const title = isEnglish ? 'Reservation Request Received' : 'Talebiniz Alındı';
-                const message = isEnglish ? 'Dear guest, we have received your reservation request. We will contact you as soon as possible to confirm your reservation. Have a great day!' : 'Değerli misafirimiz rezervasyon talebilinizi aldık en kısa sürede iletişime geçip rezervasyonunuzu onaylayacağız iyi günler dileriz.';
-                const btnText = isEnglish ? 'CLOSE' : 'KAPAT';
-                
-                popup.innerHTML = `
-                    <div style="width: 80px; height: 80px; background: var(--stone-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; color: var(--gold); font-size: 2rem;">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <h3 style="font-family: var(--font-heading); color: var(--text-main); font-size: 2rem; margin-bottom: 20px; font-weight: normal;">${title}</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.05rem; line-height: 1.6;">${message}</p>
-                    <button class="btn-luxury close-popup" style="width: 100%; cursor: pointer;">${btnText}</button>
-                `;
-                
-                overlay.appendChild(popup);
-                document.body.appendChild(overlay);
-                
-                // Trigger entry animation
-                requestAnimationFrame(() => {
-                    overlay.style.opacity = '1';
-                    popup.style.transform = 'scale(1)';
-                });
-                
-                // Close logic
-                const closeBtn = popup.querySelector('.close-popup');
-                closeBtn.addEventListener('click', () => {
-                    overlay.style.opacity = '0';
-                    popup.style.transform = 'scale(0.8)';
-                    setTimeout(() => overlay.remove(), 300);
-                    contactForm.reset();
-                });
+                if (data.success) {
+                    // --- BAŞARILI POPUP GÖSTERİMİ ---
+                    const overlay = document.createElement('div');
+                    overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); z-index: 3000; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;';
+                    
+                    const popup = document.createElement('div');
+                    popup.style.cssText = 'background: var(--white); padding: 50px; border-radius: var(--radius); text-align: center; max-width: 500px; transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 40px 100px rgba(0,0,0,0.2); margin: 20px; position: relative;';
+                    
+                    const isEnglish = window.location.pathname.includes('/en/');
+                    const title = isEnglish ? 'Reservation Request Received' : 'Talebiniz Alındı';
+                    const message = isEnglish ? 'Dear guest, we have received your reservation request. We will contact you as soon as possible to confirm your reservation. Have a great day!' : 'Değerli misafirimiz rezervasyon talebilinizi aldık en kısa sürede iletişime geçip rezervasyonunuzu onaylayacağız iyi günler dileriz.';
+                    const btnText = isEnglish ? 'CLOSE' : 'KAPAT';
+                    
+                    popup.innerHTML = `
+                        <div style="width: 80px; height: 80px; background: var(--stone-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; color: var(--gold); font-size: 2rem;">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); color: var(--text-main); font-size: 2rem; margin-bottom: 20px; font-weight: normal;">${title}</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.05rem; line-height: 1.6;">${message}</p>
+                        <button class="btn-luxury close-popup" style="width: 100%; cursor: pointer;">${btnText}</button>
+                    `;
+                    
+                    overlay.appendChild(popup);
+                    document.body.appendChild(overlay);
+                    
+                    requestAnimationFrame(() => {
+                        overlay.style.opacity = '1';
+                        popup.style.transform = 'scale(1)';
+                    });
+                    
+                    const closeBtn = popup.querySelector('.close-popup');
+                    closeBtn.addEventListener('click', () => {
+                        overlay.style.opacity = '0';
+                        popup.style.transform = 'scale(0.8)';
+                        setTimeout(() => overlay.remove(), 300);
+                        contactForm.reset();
+                    });
+                } else {
+                    console.error('Web3Forms Error:', data);
+                    alert('Rezervasyon gönderilemedi: ' + (data.message || 'Lütfen bilgileri kontrol edin.'));
+                }
             })
             .catch(error => {
                 console.error('Error submitting form:', error);
                 submitBtn.innerText = originalBtnText;
                 submitBtn.disabled = false;
-                alert('Bir hata oluştu, lütfen daha sonra tekrar deneyin.');
+                alert('Bir bağlantı hatası oluştu, lütfen daha sonra tekrar deneyin.');
             });
         });
     }

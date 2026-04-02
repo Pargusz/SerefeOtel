@@ -199,8 +199,9 @@ header.scrolled .lang-btn {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
     animation: slowZoom 30s linear infinite alternate;
 }
 
