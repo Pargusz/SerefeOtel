@@ -4,32 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Şerefe Otel - Şehrin kalbinde zamansız bir lüks deneyimi.">
-    <title>Şerefe Otel | Timeless Luxury</title>
+    <meta name="description" content="Şerefe Hotel Alaçatı - Alaçatı'nın kalbinde huzurlu ve lüks bir konaklama deneyimi.">
+    <title>Şerefe Hotel Alaçatı | Butik Otel & Konaklama</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="style.css">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="home-page">
+<body>
     <!-- Loader -->
     <div id="loader">
-        <div class="loader-logo">ŞEREFE <span>OTEL</span></div>
-        <div class="loader-bar"></div>
+        <div class="loader-logo">Şerefe</div>
     </div>
 
     <!-- Header -->
     <header id="main-header">
-        <div class="logo">ŞEREFE <span>OTEL</span></div>
+        <a href="index.html" class="logo">Şerefe</a>
         <nav id="nav-menu">
             <ul>
-                <li><a href="index.html" class="active">Koleksiyon</a></li>
+                <li><a href="index.html" class="active">Anasayfa</a></li>
                 <li><a href="about.html">Hikayemiz</a></li>
                 <li><a href="contact.html">İletişim</a></li>
             </ul>
         </nav>
         <div class="hamburger">
+            <span></span>
             <span></span>
             <span></span>
         </div>
@@ -40,77 +40,87 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <span class="hero-subtitle">EST. 1994 • İSTANBUL</span>
-            <h1>Zamansız Bir <br>Zarafet Hikayesi</h1>
-            <a href="contact.html" class="btn-luxury">Rezervasyon</a>
+    <section class="hero reveal">
+        <div class="hero-inner">
+            <div class="hero-bg" style="background-image: url('assets/image.png');"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Huzurun ve Zerafetin <br>Yeni Adresi</h1>
+                <a href="contact.html" class="btn-luxury">Keşfet</a>
+            </div>
         </div>
     </section>
 
     <!-- Editorial Intro -->
-    <section>
-        <div class="editorial-flex">
-            <div class="editorial-img">
-                <img src="assets/hero.png" alt="Şerefe Otel">
+    <section class="reveal">
+        <div class="flex-layout">
+            <div class="flex-img">
+                <img src="assets/image2.png" alt="Şerefe Hotel Alaçatı">
             </div>
-            <div class="editorial-text">
+            <div class="flex-text">
                 <div class="section-head">
-                    <label>BİZ KİMİZ</label>
-                    <h2>Şehrin Kalbinde Rafine Bir Kaçamak</h2>
+                    <label style="color: var(--gold); letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px;">HİKAYEMİZ</label>
+                    <h2>Taş Duvarların Ardındaki Huzur</h2>
                 </div>
-                <p
-                    style="font-size: 1.2rem; color: var(--text-main); margin-bottom: 30px; font-family: var(--font-heading);">
-                    "Lüks, sadece gözle görülen değil, hissedilen bir detaydır."</p>
-                <p style="color: var(--text-muted); margin-bottom: 40px;">Şerefe Otel, otuz yılı aşan mirasıyla modern
-                    tasarımı ve asil misafirperverliği bir araya getiriyor. Nişantaşı'nın en seçkin noktasında, her
-                    köşesi özenle küratörlüğü yapılmış bir yaşam alanı sunuyoruz.</p>
-                <a href="about.html"
-                    style="color: var(--dark); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 5px;">HİKAYEMİZİ
-                    KEŞFEDİN</a>
+                <p style="font-size: 1.25rem; color: var(--gold); margin-bottom: 30px; font-family: var(--font-heading); font-style: italic;">
+                    "Alaçatı'nın ruhunu, modern konforla buluşturuyoruz."</p>
+                <p style="color: var(--text-muted); margin-bottom: 40px;">Şerefe Hotel Alaçatı, geleneksel taş mimarisi ve özenle seçilmiş detaylarıyla misafirlerine unutulmaz bir Ege kaçamağı sunuyor. İnönü Caddesi'nin merkezinde, ama gürültüden uzak, her köşesinde huzuru hissedeceğiniz bir atmosfer hazırladık.</p>
+                <a href="about.html" class="btn-luxury">DETAYLI BİLGİ</a>
             </div>
         </div>
     </section>
 
-    <!-- Bento Services -->
-    <section style="background-color: #fff;">
-        <div class="section-head">
-            <label>EXPERIENCES</label>
-            <h2>Ayrıcalıklı Anlar</h2>
+    <!-- Experiences/Rooms Grid -->
+    <section style="background-color: var(--white); border-radius: var(--radius); margin: 0 20px;" class="reveal">
+        <div class="section-head" style="text-align: center;">
+            <label style="color: var(--gold); letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px;">KONAKLAMA</label>
+            <h2>Benzersiz Odalarımız</h2>
         </div>
-        <div class="bento-grid">
-            <!-- Large Item -->
-            <div class="bento-item large">
-                <img src="assets/room.png" alt="Suit">
-                <div class="bento-overlay">
-                    <h4>Kral Dairesi</h4>
-                    <p>Panoramik şehir manzarası ve eşsiz konfor.</p>
+        <div class="experiences-grid">
+            <!-- Deluxe Oda -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="assets/image3.png" alt="Deluxe Oda">
                 </div>
+                <h4 style="padding-top: 10px;">Deluxe Oda</h4>
+                <p>Taş duvarlar ve vintage detaylarla harmanlanmış geniş yaşam alanı.</p>
             </div>
-            <!-- Standard Item -->
-            <div class="bento-item">
-                <i class="fas fa-spa"></i>
-                <div class="bento-content">
-                    <h4>Spa & Wellness</h4>
-                    <p>Ruhsal ve bedensel arınma için özel tasarım terapi alanları.</p>
+            <!-- Suit Oda -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="assets/image4.png" alt="Suit Oda">
                 </div>
+                <h4 style="padding-top: 10px;">Suit Oda</h4>
+                <p>En özel anlarınız için eşsiz konfor ve ferah tasarım.</p>
             </div>
-            <!-- Wide Item -->
-            <div class="bento-item wide">
-                <img src="assets/spa.png" alt="Gastronomi">
-                <div class="bento-overlay">
-                    <h4>Fine Dining</h4>
-                    <p>Dünya mutfağının en seçkin lezzetleri.</p>
+            <!-- Standart Oda -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="assets/image5.png" alt="Standart Oda">
                 </div>
+                <h4 style="padding-top: 10px;">Standart Oda</h4>
+                <p>Konforun ve şıklığın en yalın hali.</p>
             </div>
-            <!-- Standard Item -->
-            <div class="bento-item">
-                <i class="fas fa-concierge-bell"></i>
-                <div class="bento-content">
-                    <h4>Özel Concierge</h4>
-                    <p>7/24 kişiselleştirilmiş asistanlık hizmeti.</p>
+        </div>
+    </section>
+
+    <!-- Amenities / Pool Section -->
+    <section class="reveal">
+        <div class="flex-layout" style="flex-direction: row-reverse;">
+            <div class="flex-img">
+                <img src="assets/image6.png" alt="Havuz Alanı">
+            </div>
+            <div class="flex-text">
+                <div class="section-head">
+                    <label style="color: var(--gold); letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px;">OLANAKLAR</label>
+                    <h2>Ege Güneşi Altında Serinlik</h2>
                 </div>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">Turkuaz suların ve palmiye ağaçlarının gölgesinde, Şerefe Hotel ayrıcalıklarıyla Alaçatı'nın tadını çıkarın. Özel bahçemiz ve havuz başı servisimizle gün boyu sürecek bir keyif sizi bekliyor.</p>
+                <ul style="list-style: none; margin-bottom: 40px; color: var(--text-main); font-weight: 500;">
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--gold); margin-right: 15px;"></i> Açık Yüzme Havuzu</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--gold); margin-right: 15px;"></i> Ege Kahvaltısı</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--gold); margin-right: 15px;"></i> 24 Saat Resepsiyon</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -119,35 +129,34 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <div class="logo" style="margin-bottom: 30px; color: #fff;">ŞEREFE <span>OTEL</span></div>
-                <p>Zerafetin ve huzurun İstanbul'daki tek adresi.</p>
+                <a href="index.html" class="logo" style="margin-bottom: 30px;">Şerefe</a>
+                <p>Alaçatı'nın kalbinde, zerafetin ve huzurun buluşma noktası.</p>
             </div>
             <div class="footer-col">
                 <h5>Navigasyon</h5>
                 <ul>
-                    <li><a href="index.html">Koleksiyon</a></li>
+                    <li><a href="index.html">Anasayfa</a></li>
                     <li><a href="about.html">Hikayemiz</a></li>
                     <li><a href="contact.html">İletişim</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h5>Deneyimler</h5>
+                <h5>Odalar</h5>
                 <ul>
-                    <li><a href="#">Spa & Arınma</a></li>
-                    <li><a href="#">Gastronomi</a></li>
-                    <li><a href="#">Etkinlikler</a></li>
+                    <li><a href="#">Deluxe Oda</a></li>
+                    <li><a href="#">Suit Oda</a></li>
+                    <li><a href="#">Standart Oda</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>İletişim</h5>
-                <p style="color: #fff; margin-bottom: 10px;">Nişantaşı, İstanbul</p>
-                <p style="color: var(--gold); font-weight: 600;">+90 212 123 45 67</p>
-                <p>reservation@serefeotel.com</p>
+                <p style="margin-bottom: 10px; color: var(--text-main);">İnönü Cd. No:53, Alaçatı/İzmir</p>
+                <p style="color: var(--gold); font-weight: 600; font-size: 1.1rem; margin-bottom: 5px;">+90 532 461 8113</p>
+                <p>reservation@serefehotelalacati.com</p>
             </div>
         </div>
-        <div
-            style="text-align: center; padding-top: 60px; font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 2px;">
-            &copy; 2024 ŞEREFE OTEL. ALL RIGHTS RESERVED. | DESIGN BY Pargusz
+        <div class="copyright">
+            &copy; 2024 ŞEREFE HOTEL ALAÇATI. ALL RIGHTS RESERVED. | DESIGN BY Pargusz
         </div>
     </footer>
 

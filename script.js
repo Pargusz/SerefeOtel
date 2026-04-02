@@ -1,134 +1,142 @@
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');
     const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('nav ul li a');
+    const nav = document.getElementById('nav-menu');
     const loader = document.getElementById('loader');
 
-    // --- Premium Loader Logic ---
+    // Loader
     window.addEventListener('load', () => {
         setTimeout(() => {
-            if (loader) {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 800);
-            }
-        }, 1000); // 1s visual focus on logo
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 800);
+        }, 500);
     });
 
-    // Page Transition (Fade-in on exit)
-    document.querySelectorAll('a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            // Internal links only
-            if (href && !href.startsWith('http') && !href.startsWith('#') && !this.target) {
-                e.preventDefault();
-                if (loader) {
-                    loader.style.display = 'flex';
-                    setTimeout(() => {
-                        loader.style.opacity = '1';
-                    }, 10);
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 600);
-                } else {
-                    window.location.href = href;
-                }
-            }
-        });
-    });
-
-    // --- Header Scroll Effect ---
+    // Scroll Header
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
-            if (document.body.classList.contains('home-page')) {
-                header.classList.remove('scrolled');
-            } else {
-                header.classList.add('scrolled');
-            }
+            header.classList.remove('scrolled');
         }
     });
 
-    if (!document.body.classList.contains('home-page')) {
-        header.classList.add('scrolled');
-    }
-
-    // --- Mobile Menu Toggle ---
-    if (hamburger && nav) {
-        hamburger.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            const spans = hamburger.querySelectorAll('span');
-            if (nav.classList.contains('active')) {
-                spans[0].style.transform = 'translateY(5px) rotate(45deg)';
-                spans[1].style.transform = 'translateY(-5px) rotate(-45deg)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.transform = 'none';
-            }
-        });
-    }
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('active');
-            const spans = hamburger.querySelectorAll('span');
+    // Mobile Menu
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        header.classList.toggle('menu-open');
+        
+        // Prevent body scrolling when menu is open
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        
+        // Hamburger animation
+        const spans = hamburger.querySelectorAll('span');
+        if (nav.classList.contains('active')) {
+            spans[0].style.transform = 'translateY(10px) rotate(45deg)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'translateY(-10px) rotate(-45deg)';
+        } else {
             spans[0].style.transform = 'none';
-            spans[1].style.transform = 'none';
-        });
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
     });
 
-    // --- Reveal On Scroll ---
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
-
+    // Reveal Animations on Scroll
+    const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                revealObserver.unobserve(entry.target);
+                entry.target.classList.add('active');
             }
         });
-    }, observerOptions);
-
-    const animateElements = document.querySelectorAll('.bento-item, .section-head, .editorial-flex, .hero-content');
-    
-    animateElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = `all 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.1}s`;
-        revealObserver.observe(el);
+    }, {
+        threshold: 0.1
     });
 
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .revealed { opacity: 1 !important; transform: translateY(0) !important; }
-    `;
-    document.head.appendChild(style);
+    revealElements.forEach(el => revealObserver.observe(el));
 
-    // --- Form Simulation ---
+    // Form Submit Popup & Web3Forms Logic
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.innerText;
-            btn.innerText = 'GÖNDERİLİYOR...';
-            btn.disabled = true;
+            
+            // --- E-POSTA GÖNDERİM İŞLEMİ (Web3Forms) ---
+            const formData = new FormData(contactForm);
+            
+            // Web3Forms API Anahtarı
+            formData.append('access_key', 'fbcfe867-339d-46c1-bc42-165db1d48566'); 
+            formData.append('subject', 'Yeni Rezervasyon Talebi Şerefe Hotel');
+            formData.append('from_name', 'Şerefe Hotel Web Rezervasyon');
+            
+            // Buton metnini değiştirip gönderiliyor efekti verelim
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = 'GÖNDERİLİYOR...';
+            submitBtn.disabled = true;
 
-            setTimeout(() => {
-                alert('Talebiniz başarıyla alındı. Teşekkür ederiz.');
-                btn.innerText = 'BAŞARILI';
-                contactForm.reset();
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                }, 3000);
-            }, 2000);
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Başarılı olduğunda (veya form sunulduğunda) butonu eski haline getir
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+                
+                // --- POPUP GÖSTERİMİ ---
+                // Create popup overlay
+                const overlay = document.createElement('div');
+                overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); z-index: 3000; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;';
+                
+                // Create popup container
+                const popup = document.createElement('div');
+                popup.style.cssText = 'background: var(--white); padding: 50px; border-radius: var(--radius); text-align: center; max-width: 500px; transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 40px 100px rgba(0,0,0,0.2); margin: 20px; position: relative;';
+                
+                const isEnglish = window.location.pathname.includes('/en/');
+                
+                const title = isEnglish ? 'Reservation Request Received' : 'Talebiniz Alındı';
+                const message = isEnglish ? 'Dear guest, we have received your reservation request. We will contact you as soon as possible to confirm your reservation. Have a great day!' : 'Değerli misafirimiz rezervasyon talebilinizi aldık en kısa sürede iletişime geçip rezervasyonunuzu onaylayacağız iyi günler dileriz.';
+                const btnText = isEnglish ? 'CLOSE' : 'KAPAT';
+                
+                popup.innerHTML = `
+                    <div style="width: 80px; height: 80px; background: var(--stone-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; color: var(--gold); font-size: 2rem;">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); color: var(--text-main); font-size: 2rem; margin-bottom: 20px; font-weight: normal;">${title}</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.05rem; line-height: 1.6;">${message}</p>
+                    <button class="btn-luxury close-popup" style="width: 100%; cursor: pointer;">${btnText}</button>
+                `;
+                
+                overlay.appendChild(popup);
+                document.body.appendChild(overlay);
+                
+                // Trigger entry animation
+                requestAnimationFrame(() => {
+                    overlay.style.opacity = '1';
+                    popup.style.transform = 'scale(1)';
+                });
+                
+                // Close logic
+                const closeBtn = popup.querySelector('.close-popup');
+                closeBtn.addEventListener('click', () => {
+                    overlay.style.opacity = '0';
+                    popup.style.transform = 'scale(0.8)';
+                    setTimeout(() => overlay.remove(), 300);
+                    contactForm.reset();
+                });
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+                alert('Bir hata oluştu, lütfen daha sonra tekrar deneyin.');
+            });
         });
     }
 });

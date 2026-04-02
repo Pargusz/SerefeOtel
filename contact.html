@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim | Şerefe Otel</title>
+    <title>İletişim | Şerefe Hotel Alaçatı</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="subpage">
     <!-- Loader -->
     <div id="loader">
-        <div class="loader-logo">ŞEREFE <span>OTEL</span></div>
-        <div class="loader-bar"></div>
+        <div class="loader-logo">Şerefe</div>
     </div>
 
     <!-- Header -->
     <header id="main-header" class="scrolled">
-        <div class="logo">ŞEREFE <span>OTEL</span></div>
+        <a href="index.html" class="logo">Şerefe</a>
         <nav id="nav-menu">
             <ul>
-                <li><a href="index.html">Koleksiyon</a></li>
+                <li><a href="index.html">Anasayfa</a></li>
                 <li><a href="about.html">Hikayemiz</a></li>
                 <li><a href="contact.html" class="active">İletişim</a></li>
             </ul>
         </nav>
         <div class="hamburger">
+            <span></span>
             <span></span>
             <span></span>
         </div>
@@ -35,54 +35,84 @@
     </header>
 
     <!-- Subpage Hero -->
-    <section class="hero">
-        <div class="hero-bg"></div>
+    <section class="sub-hero reveal">
         <div class="hero-content">
-            <span class="hero-subtitle">REZERVASYON & DESTEK</span>
-            <h1>Bize Ulaşın</h1>
+            <h1 style="text-align: center;">Bize Ulaşın</h1>
         </div>
     </section>
 
     <!-- Content -->
-    <section>
-        <div style="display: flex; gap: 100px; flex-wrap: wrap;">
+    <section class="reveal">
+        <div class="flex-layout">
             <div style="flex: 1; min-width: 300px;">
                 <div class="section-head">
-                    <label>KONUM</label>
+                    <label style="color: var(--gold); letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px;">KONUM</label>
                     <h2>Şerefe'ye Yolculuk</h2>
                 </div>
-                <p style="color: var(--text-muted); margin-bottom: 40px;">İstanbul'un kalbinde, tüm ulaşım noktalarına yakın ama kaosun dışında bir sığınaktayız. Nişantaşı'nın en nezih sokağında sizi bekliyoruz.</p>
+                <p style="color: var(--text-muted); margin-bottom: 40px;">Ege'nin kalbi Alaçatı'da, İnönü Caddesi'nin en nezih noktasında sizi bekliyoruz. Huzur dolu bir konaklama için bizimle iletişime geçebilirsiniz.</p>
                 
-                <div style="margin-bottom: 30px;">
-                    <h4 style="font-family: var(--font-alt); font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px;">ADRES</h4>
-                    <p>Rumeli Caddesi No:45, Nişantaşı, İstanbul</p>
+                <div style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 20px;">
+                    <i class="fas fa-map-marker-alt" style="color: var(--gold); margin-top: 5px;"></i>
+                    <div>
+                        <h4 style="font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 5px; text-transform: uppercase;">ADRES</h4>
+                        <p>İnönü Cd. No:53, Alaçatı/İzmir, 35937</p>
+                    </div>
                 </div>
-                <div style="margin-bottom: 30px;">
-                    <h4 style="font-family: var(--font-alt); font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px;">TELEFON</h4>
-                    <p>+90 212 123 45 67</p>
+                <div style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 20px;">
+                    <i class="fas fa-phone-alt" style="color: var(--gold); margin-top: 5px;"></i>
+                    <div>
+                        <h4 style="font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 5px; text-transform: uppercase;">TELEFON</h4>
+                        <p>+90 532 461 8113</p>
+                    </div>
                 </div>
-                <div style="margin-bottom: 30px;">
-                    <h4 style="font-family: var(--font-alt); font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 10px;">E-POSTA</h4>
-                    <p>info@serefeotel.com</p>
+                <div style="margin-bottom: 30px; display: flex; align-items: flex-start; gap: 20px;">
+                    <i class="fas fa-envelope" style="color: var(--gold); margin-top: 5px;"></i>
+                    <div>
+                        <h4 style="font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); margin-bottom: 5px; text-transform: uppercase;">E-POSTA</h4>
+                        <p>reservation@serefehotelalacati.com</p>
+                    </div>
                 </div>
             </div>
-            <div style="flex: 1.5; min-width: 400px; background: #fff; border: 1px solid var(--border); padding: 60px;">
+            
+            <div style="flex: 1; min-width: 350px; background: var(--white); border-radius: var(--radius); padding: 50px; box-shadow: 0 40px 80px rgba(0,0,0,0.05);">
+                
+                <div style="margin-bottom: 30px; padding: 20px; background-color: var(--stone-light); border-radius: var(--radius-sm); border: 1px solid var(--gold-soft);">
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;"><strong>Lütfen Dikkat:</strong> Kesin bir rezervasyon oluşturabilmemiz için aşağıdaki tüm alanların * eksiksiz doldurulması zorunludur. Talebiniz resepsiyonumuza iletilecek ve müsaitlik durumuna göre size telefon veya e-posta yoluyla en kısa sürede geri dönüş yapılacaktır.</p>
+                </div>
+
                 <form id="contactForm">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
-                        <div>
-                            <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px;">ADINIZ</label>
-                            <input type="text" style="width: 100%; padding: 15px; border: 1px solid var(--border); background: var(--ivory); font-family: var(--font-body);">
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase;">ADINIZ VE SOYADINIZ *</label>
+                        <input type="text" name="isim_soyad" required placeholder="Kimlikteki adınız" style="width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--stone-light); font-family: var(--font-body);">
+                    </div>
+                    
+                    <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+                        <div style="flex: 1;">
+                            <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase;">E-POSTA *</label>
+                            <input type="email" name="eposta" required placeholder="ornek@email.com" style="width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--stone-light); font-family: var(--font-body);">
                         </div>
-                        <div>
-                            <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px;">E-POSTA</label>
-                            <input type="email" style="width: 100%; padding: 15px; border: 1px solid var(--border); background: var(--ivory); font-family: var(--font-body);">
+                        <div style="flex: 1;">
+                            <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase;">TELEFON *</label>
+                            <input type="tel" name="telefon" required placeholder="05XX XXX XX XX" style="width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--stone-light); font-family: var(--font-body);">
                         </div>
                     </div>
+
+                    <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+                        <div style="flex: 1;">
+                            <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase;">GİRİŞ/ÇIKIŞ TARİHİ *</label>
+                            <input type="text" name="tarihler" required placeholder="Örn: 15 Ağustos - 20 Ağustos" style="width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--stone-light); font-family: var(--font-body);">
+                        </div>
+                        <div style="flex: 1;">
+                            <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase;">KİŞİ SAYISI *</label>
+                            <input type="number" name="kisi_sayisi" required min="1" placeholder="Yetişkin / Çocuk" style="width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--stone-light); font-family: var(--font-body);">
+                        </div>
+                    </div>
+
                     <div style="margin-bottom: 30px;">
-                        <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px;">MESAJINIZ</label>
-                        <textarea rows="6" style="width: 100%; padding: 15px; border: 1px solid var(--border); background: var(--ivory); font-family: var(--font-body);"></textarea>
+                        <label style="display: block; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase;">MESAJINIZ / TALEPLERİNİZ</label>
+                        <textarea rows="3" name="mesaj" placeholder="Özel bir isteğiniz var mı?" style="width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--stone-light); font-family: var(--font-body);"></textarea>
                     </div>
-                    <button type="submit" class="btn-luxury" style="border-color: var(--dark); color: var(--dark); cursor: pointer;">GÖNDER</button>
+                    <button type="submit" class="btn-luxury" style="width: 100%; cursor: pointer;">RESEPSİYONA İLET</button>
                 </form>
             </div>
         </div>
@@ -92,25 +122,26 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <div class="logo" style="margin-bottom: 30px; color: #fff;">ŞEREFE <span>OTEL</span></div>
-                <p>Zerafetin ve huzurun İstanbul'daki tek adresi.</p>
+                <a href="index.html" class="logo" style="margin-bottom: 30px;">Şerefe</a>
+                <p>Alaçatı'nın kalbinde, zerafetin ve huzurun buluşma noktası.</p>
             </div>
             <div class="footer-col">
                 <h5>Navigasyon</h5>
                 <ul>
-                    <li><a href="index.html">Koleksiyon</a></li>
+                    <li><a href="index.html">Anasayfa</a></li>
                     <li><a href="about.html">Hikayemiz</a></li>
                     <li><a href="contact.html">İletişim</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h5>İletişim</h5>
-                <p style="color: #fff; margin-bottom: 10px;">Nişantaşı, İstanbul</p>
-                <p style="color: var(--gold); font-weight: 600;">+90 212 123 45 67</p>
+                <p style="margin-bottom: 10px; color: var(--text-main);">İnönü Cd. No:53, Alaçatı/İzmir</p>
+                <p style="color: var(--gold); font-weight: 600; font-size: 1.1rem; margin-bottom: 5px;">+90 532 461 8113</p>
+                <p>reservation@serefehotelalacati.com</p>
             </div>
         </div>
-        <div style="text-align: center; padding-top: 60px; font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 2px;">
-            &copy; 2024 ŞEREFE OTEL. ALL RIGHTS RESERVED. | DESIGN BY Pargusz
+        <div class="copyright">
+            &copy; 2024 ŞEREFE HOTEL ALAÇATI. ALL RIGHTS RESERVED. | DESIGN BY Pargusz
         </div>
     </footer>
 
