@@ -10,6 +10,9 @@
     <title>Contact | Şerefe Hotel Alaçatı</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Flatpickr Date Picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body class="subpage">
     <!-- Loader -->
@@ -148,5 +151,19 @@
     </footer>
 
     <script src="../script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            flatpickr("input[name='tarihler']", {
+                mode: "range",
+                minDate: "today",
+                dateFormat: "d M Y",
+                showMonths: window.innerWidth > 768 ? 2 : 1,
+                altInput: true,
+                altFormat: "d M Y",
+                placeholder: "e.g. 15 Aug - 20 Aug",
+                disableMobile: "true"
+            });
+        });
+    </script>
 </body>
 </html>
